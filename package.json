@@ -1,0 +1,17 @@
+{
+  "name": "fb-alice-bot",
+  "version": "1.0.0",
+  "description": "A small Alice bot implementation for Facebook messenger",
+  "main": "index.js",
+  "scripts": {
+    "start": "node-lambda run",
+    "package": "node-lambda package --functionName fb-alice-bot --environment production --configFile deploy.env --excludeGlobs 'event.json .env deploy.env context.json .idea/'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Jaydeep Solanki (jaydp17@gmail.com)",
+  "license": "MIT",
+  "devDependencies": {
+    "node-lambda": "^0.8.6"
+  }
+}
