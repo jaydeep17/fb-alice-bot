@@ -6,7 +6,7 @@ The source of the bot is built to run in a server-less environment, thus it's ju
 
 
 ## Demo
-(coming soon)
+http://m.me/yoyobot (coming soon)
 
 ## How to use it?
 To deploy it to AWS Lambda, all you need is `deploy.env` file and a few environment variables.
