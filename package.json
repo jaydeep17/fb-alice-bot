@@ -13,5 +13,10 @@
   "license": "MIT",
   "devDependencies": {
     "node-lambda": "^0.8.6"
+  },
+  "dependencies": {
+    "bluebird": "^3.4.1",
+    "request": "^2.74.0",
+    "request-promise": "^4.1.0"
   }
 }
