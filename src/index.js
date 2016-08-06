@@ -5,6 +5,7 @@ const Promise = require('bluebird');
 const Auth = require('./auth');
 const sendMessage = require('./send-message');
 const parseMessages = require('./parse-messages');
+const YoBotController = require('./yobot/yobot-controller');
 
 exports.handler = (event, context, callback) => {
   console.log('Received event', JSON.stringify(event, null, 2));
@@ -18,7 +19,9 @@ exports.handler = (event, context, callback) => {
   // process POST request
   else {
     const msgData = parseMessages(event);
-    Promise.map(msgData, msg => sendMessage(msg.sender, msg.text))
-      .then(() => callback(null, event));
+    Promise.map(msgData, msg => {
+      return YoBotController.reply(msg.sender, msg.text)
+        .then((/*string*/ reply) => sendMessage(msg.sender, reply));
+    }).then(() => callback(null, event));
   }
 };
